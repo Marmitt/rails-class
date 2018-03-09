@@ -1,12 +1,21 @@
 <h1>Bem vindo a minha primeira app com Rails </h1>
 <p>Find me in app/views/home/index.html.erb</p>
 
+<% if @product %>
 <h2>Último produto cadastrado: </h2>
 <%= @product.name %><br />
 <%= @product.price %><br />
+
 
 <h2>Nomes dos produtos</h2>
 <%= Product.all.map{|p| p.name}.join(' | ') %>
 
 <h2>Soma dos produtos</h2>
 <%= Product.all.map(&:price).sum %>
+<% end %>
+
+<h1>
+  <%= @produto_encontrado %>
+  <hr />
+  <%= @valor_total %>
+</h1>
